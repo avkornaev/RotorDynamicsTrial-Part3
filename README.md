@@ -1,5 +1,5 @@
-# RotorDynamicsTrial-Part1
+# RotorDynamicsTrial-Part3
 The project deals with rotor dynamics simulation using MATLAB.
  Tuturial purposes only.
 Everything starts from MAIN.m file. 
-Part 1 deals with a bearing of infinite length (2d fluid flow)
+Part 3 deals with dynamic properties of a fluid-film bearing
