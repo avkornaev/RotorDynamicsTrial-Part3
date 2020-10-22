@@ -1,5 +1,5 @@
 classdef Static_prop < Kinem_prop & handle
-    %Class of the dynamic properties of a bearing
+    %Class of the static properties of a bearing
     
     properties(GetAccess=public,SetAccess=public)
         p0
