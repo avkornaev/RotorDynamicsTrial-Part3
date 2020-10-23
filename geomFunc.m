@@ -11,7 +11,13 @@ h0=geom.h0;
 s=geom.s;
 
 %Calculation
-h=h0-X1*sin(x1/r)-X2*cos(x1/r);% gap function
+% b=h0+50e-6;a=h0;
+% for i=1:length(x1)
+%     h0new(i)=a*b/(sqrt(b^2*cos(x1(i)/r-pi/2)+a^2*sin(x1(i)/r-pi/2)));
+% end
+
+h=h0-X1*sin(x1/r)-X2*cos(x1/r)+0.3*h0*sin(x1/r);% gap function
+%h=h0new-X1*sin(x1/r)-X2*cos(x1/r)+0.3*h0*sin(x1/r);% gap function
 hpow3=h.^3;% gap function powered by 3
 
 dhpow3dx1=zeros(1,m(1));
