@@ -36,16 +36,13 @@ mass=1;%rotor mass, kg
 g=9.81;%free fall acceleration, m/(s^2)
 mu=1e-3;% fluid viscosity, Pa*s
  %Switches
-kindTi=0;%0 is for stationary;
+kindTi=1;%0 is for stationary;
          %1 is for the trajectory method;
          %2 is for the linearization method;
          %3 is for the given K and B matrices;
          %4 is for the non-linear approximation by ANNs;
-kindPlot=1;%0 is without plots; 1 is with plots
+kindPlot=0;%0 is without plots; 1 is with plots
 switSet=struct('kindTi',kindTi,'kindPlot',kindPlot);
-
-%% Rotor dynamics
-tic;%calculation time timer starts
 
 %% Pressure field, resulting force and torque
 
@@ -58,6 +55,14 @@ vel=kinem.fun_vel%upload results
 static=Static_prop(p0,mu,vel,n_rps,V1,V2,gap,X1,X2,...
                             e_r,r,R,h0,L,m,x1,x3,s);%create CI
 pf=static.fun_pf%upload results                        
+
+%% Rotor dynamics
+tic;%calculation time timer starts
+dyn=Dyn_prop(totalTime,dX,dV,Fext,deltam,mass,g,switSet,...
+                         p0,mu,vel,n_rps,V1,V2,gap,X1,X2,...
+                         e_r,r,R,h0,L,m,x1,x3,s);%create class instance (CI)
+rd=dyn.fun_dyn%upload results
+
 
 %% Visualisation
 switch switSet.kindPlot

@@ -34,7 +34,7 @@ classdef Dyn_prop < Static_prop & handle
  
         %Pressure field, total force and torque
         function rd=fun_dyn(dyn)
-            [V1,X1,V2,t,Kij,Bij,F1,F2,M]=rotorDyn(dyn);
+            [V1,X1,V2,X2,t,Kij,Bij,F1,F2,M]=rotorDyn(dyn);
                 
             %Results
             rd.V1=V1;
