@@ -11,14 +11,20 @@ for t=1:sizeX
         fi(t)=-acos(X1(t)/rho(t));
     end
 end
+ b=h0+50e-6;a=h0;
+% for i=1:length(x1)
+%     h0new(i)=a*b/(sqrt(b^2*cos(x1(i)/r-pi/2)+a^2*sin(x1(i)/r-pi/2)));
+% end
     
 figure('Color', 'w')
 grid on
-f=0:0.01:2*pi;
-h=ones(size(f))*h0;
-polar(f,h,'r--');
+fi=0:0.01:2*pi;
+%h=ones(size(fi))*h0+h0new(i)=a*b/(sqrt(b^2*cos(x1(i)/r-pi/2)+a^2*sin(x1(i)/r-pi/2)));;
+h=ones(size(fi))*h0+a*b/(sqrt(b^2*cos(fi(i))+a^2*sin(fi(i)/r-pi/2)));;
+polar(fi,h,'r--');
 axis  ([-h0 h0 -h0 h0])
 hold on
+polar(fi,h,'r--');
 polar(fi,rho);
 hold off
 end
