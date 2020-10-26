@@ -1,4 +1,4 @@
-function [V1,X1,V2,X2,t,Kij,Bij,F1,F2,M]=rotorDyn(dyn)
+function [V1,X1,V2,X2,t,K,B,F1,F2,M]=rotorDyn(dyn)
 % Rotor dynamics 
 
 %Initialisation
@@ -14,8 +14,8 @@ y0=[V1;X1;V2;X2];%initial conditions
 
 kindTi=dyn.switSet.kindTi;
 t=0;
-Kij=0;
-Bij=0;
+K=0;
+B=0;
 F1=0;
 F2=0;
 M=0;
@@ -40,21 +40,25 @@ switch kindTi
         y=[X1 X2 0 0];%arguments
         [F1E,F2E,M]=resultingForces(y,dyn);%resulting force and torque
         
-        %In the other points [X1+dX,X2,0,0],[X1,X2+dX,0,0],...
-        %Enter your code here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        y=[X1    X2 0 0;...
-           X1+dX X2 0 0;...
-           X1 X2 0 0;...
-           X1 X2 0 0;...
-           X1 X2 0 0;...
-           X1 X2 0 0;...
-           X1 X2 0 0;...];
+        %In the 8 neigbour points [X1+dX,X2,0,0],[X1,X2+dX,0,0],...
         
+        %!!!!!!!!!!!Enter your code here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        %y=
+        %[F1n,F2n,M]=
+        %K=
+        %B=
+        %!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         
-        %X1=X1+dX,X2=X2,V1=0,V2=0
-        
-        
+        %Solver for the system of Ordinary Differential equations (ODE)
+        [t,Y]=ode45(@(t,y) equationsOfMotion2(t,y,dyn,F1E,F2E,K,B),...
+            [0 totalTime],y0);
+        %Results from the ODE solver
+        V1=Y(:,1); X1=Y(:,2); V2=Y(:,3); X2=Y(:,4);
     case 3
+        %Solver for the system of Ordinary Differential equations (ODE)
+        [t,Y]=ode45(@(t,y) equationsOfMotion3(t,y,dyn),[0 totalTime],y0);
+        %Results from the ODE solver
+        V1=Y(:,1); X1=Y(:,2); V2=Y(:,3); X2=Y(:,4);
     case 4
 end
             

@@ -4,8 +4,10 @@ clc
 %Part 3. Trajectories and dynamic properties
 
 %Please add your code to the higlihted regions of the following functions:
-
-
+%rotorDyn.m
+%equationsOfMotion1.m
+%equationsOfMotion2.m
+%equationsOfMotion3.m
 %% Input data and parameters
  %Geometric parameters
 r=20e-3;% rotor radius,m
@@ -38,8 +40,7 @@ mu=1e-3;% fluid viscosity, Pa*s
 kindTi=1;%0 is for stationary;
          %1 is for the trajectory method;
          %2 is for the linearization method;
-         %3 is for the given K and B matrices;
-         %4 is for the non-linear approximation by ANNs;
+         %3 is for the non-linear approximation by ANNs;
 kindPlot=struct("pressureField","off","trajectory","on",...
                 "frequencyResponse","on");%on/off plots
 switSet=struct("kindTi",kindTi,"kindPlot",kindPlot);%settings
