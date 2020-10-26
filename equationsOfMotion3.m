@@ -15,7 +15,8 @@ dydt=zeros(4,1);%the right-side parts of the equations
 
 %Fluid film reaction forces are calculatee by an ANN
 %!!!!!!!!!!!Enter your code here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-%[F1,F2]=
+[F]=myNeuralNetworkFunction(y)
+F1=F(1);F2=F(2);
 %!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 %The right-side parts of the equations

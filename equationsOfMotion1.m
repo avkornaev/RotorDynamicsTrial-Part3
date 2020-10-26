@@ -18,9 +18,9 @@ dydt=zeros(4,1);%the right-side parts of the equations
 %The right-side parts of the equations
 %!!!!!!!!!!!Enter your code here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
  %dydt(1)=
- dydt(2)=y(1);
+ %dydt(2)=
  %dydt(3)=
- dydt(4)=y(3);
+ %dydt(4)=
 %!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
  t%print time
  
