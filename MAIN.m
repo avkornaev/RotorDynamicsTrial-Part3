@@ -37,7 +37,7 @@ mass=1;%rotor mass, kg
 g=9.81;%free fall acceleration, m/(s^2)
 mu=1e-3;% fluid viscosity, Pa*s
  %Switches
-kindTi=3;%0 is for stationary;
+kindTi=1;%0 is for stationary;
          %1 is for the trajectory method;
          %2 is for the linearization method;
          %3 is for the non-linear approximation by ANNs;

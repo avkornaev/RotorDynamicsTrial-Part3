@@ -16,12 +16,14 @@ dydt=zeros(4,1);%the right-side parts of the equations
 %where V1=y(1); X1=y(2); V2=y(3); X2=y(4);
 
 %The right-side parts of the equations
+
 %!!!!!!!!!!!Enter your code here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
- %dydt(1)=
- %dydt(2)=
- %dydt(3)=
- %dydt(4)=
+%dydt(1)=;
+%dydt(2)=;
+%dydt(3)=;
+%dydt(4)=;
 %!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
  t%print time
  
 end

@@ -32,8 +32,7 @@ switch kindTi
         %Additional results at each time step
         N=length(t);F1=zeros(N,1);F2=zeros(N,1);
         for I=1:N
-            [F1I,F2I,M]=resultingForces(Y(I,:),dyn);
-            F1(I)=F1I; F2(I)=F2I;
+            [F1(I),F2(I),M]=resultingForces(Y(I,:),dyn);            
         end
     case 2
         %It is assumed that initial position of the rotor is
@@ -44,14 +43,15 @@ switch kindTi
         %In the 8 neigbour points [0 X1+dX 0 X2],[0 X1-dX 0 X2],...
         
         %!!!!!!!!!!!Enter your code here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        %y=
-        %[F1n,F2n,M]=
-        %K=
-        %B=
+        
+        
+        
+        
+        
         %!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         
         %Solver for the system of Ordinary Differential equations (ODE)
-        [t,Y]=ode45(@(t,y) equationsOfMotion2(t,y,dyn,F1E,F2E,K,B),...
+        [t,Y]=ode45(@(t,y) equationsOfMotion2(t,y,dyn,X1,X2,F1E,F2E,K,B),...
             [0 totalTime],y0);
         %Results from the ODE solver
         V1=Y(:,1); X1=Y(:,2); V2=Y(:,3); X2=Y(:,4);
