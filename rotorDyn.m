@@ -36,11 +36,11 @@ switch kindTi
         end
     case 2
         %It is assumed that initial position of the rotor is
-        %in the equilibrium point E: X1=X1,X2=X2,V1=0,V2=0
-        y=[0 X1 0 X2];%arguments
+        %in the equilibrium point E: X1E=X1,X2E=X2,V1=0,V2=0
+        X1E=X1;X2E=X2; y=[0 X1E 0 X2E];%arguments
         [F1E,F2E,M]=resultingForces(y,dyn);%resulting force and torque
         
-        %In the 8 neigbour points [0 X1+dX 0 X2],[0 X1-dX 0 X2],...
+        %In the 8 neigbour points [0 X1E+dX 0 X2E],[0 X1E-dX 0 X2E],...
         
         %!!!!!!!!!!!Enter your code here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         
